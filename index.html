@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meme of the Day</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <div class="brand-mark">M</div>
+          <div>
+            <h1>Meme of the Day</h1>
+            <p>No login. No signup. One fresh board every 24 hours.</p>
+          </div>
+        </div>
+
+        <nav class="tab-strip" aria-label="Main tabs">
+          <button class="tab is-active" data-tab="home">Home</button>
+          <button class="tab" data-tab="submit">Post</button>
+          <button class="tab" data-tab="gallery">Memes</button>
+          <button class="tab" data-tab="timer">Timer</button>
+          <button class="tab" data-tab="rules">Rules</button>
+        </nav>
+      </header>
+
+      <main>
+        <section id="home" class="page is-active">
+          <div class="hero">
+            <div class="hero-copy">
+              <p class="eyebrow">Classroom board</p>
+              <h2>Drop today&apos;s funniest photo or text meme.</h2>
+              <p>
+                Students and teachers can post without accounts. The board resets automatically
+                after 24 hours so tomorrow starts clean.
+              </p>
+              <div class="hero-actions">
+                <button class="primary-action" data-jump="submit">Add a Meme</button>
+                <button class="secondary-action" data-jump="gallery">View Memes</button>
+              </div>
+            </div>
+
+            <div class="spotlight-panel">
+              <div class="panel-label">Top right now</div>
+              <div id="spotlight" class="spotlight-empty">No memes yet. Post the first one.</div>
+            </div>
+          </div>
+
+          <div class="stat-grid">
+            <div class="stat-card">
+              <span id="memeCount">0</span>
+              <p>memes today</p>
+            </div>
+            <div class="stat-card">
+              <span id="photoCount">0</span>
+              <p>photo posts</p>
+            </div>
+            <div class="stat-card">
+              <span id="timeLeftSmall">24:00:00</span>
+              <p>until reset</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="submit" class="page">
+          <div class="section-header">
+            <p class="eyebrow">Post tab</p>
+            <h2>Add photo or text</h2>
+            <p>Use an image file, paste an image link from the web, or write a text-only meme.</p>
+          </div>
+
+          <form id="memeForm" class="form-grid">
+            <label>
+              Display name
+              <input id="authorInput" type="text" maxlength="24" placeholder="Example: Zach" />
+            </label>
+
+            <label>
+              Meme title
+              <input id="titleInput" type="text" maxlength="60" placeholder="Example: Monday brain" required />
+            </label>
+
+            <label class="wide">
+              Text meme or caption
+              <textarea id="textInput" maxlength="220" placeholder="Type the meme text or a caption"></textarea>
+            </label>
+
+            <label>
+              Upload photo
+              <input id="fileInput" type="file" accept="image/*" />
+            </label>
+
+            <label>
+              Or paste image URL
+              <input id="urlInput" type="url" placeholder="https://..." />
+            </label>
+
+            <div class="form-actions wide">
+              <button class="primary-action" type="submit">Post Meme</button>
+              <button class="secondary-action" type="button" id="clearForm">Clear Form</button>
+            </div>
+          </form>
+        </section>
+
+        <section id="gallery" class="page">
+          <div class="section-header">
+            <p class="eyebrow">Memes tab</p>
+            <h2>Today&apos;s board</h2>
+            <p>Search posts by title, text, or name. Votes stay on this browser.</p>
+          </div>
+
+          <div class="toolbar">
+            <input id="searchInput" type="search" placeholder="Search memes..." />
+            <select id="typeFilter">
+              <option value="all">All posts</option>
+              <option value="photo">Photos</option>
+              <option value="text">Text only</option>
+            </select>
+            <button class="danger-action" id="resetNow" type="button">Reset Now</button>
+          </div>
+
+          <div id="memeGrid" class="meme-grid"></div>
+          <div id="emptyState" class="empty-state">No memes match that search.</div>
+        </section>
+
+        <section id="timer" class="page">
+          <div class="timer-card">
+            <p class="eyebrow">24 hour reset</p>
+            <h2 id="timeLeftBig">24:00:00</h2>
+            <p>
+              When the countdown reaches zero, today&apos;s memes clear from this browser and
+              the board starts over.
+            </p>
+            <button class="primary-action" data-jump="submit">Post Before Reset</button>
+          </div>
+        </section>
+
+        <section id="rules" class="page">
+          <div class="section-header">
+            <p class="eyebrow">Rules tab</p>
+            <h2>Keep the board classroom safe</h2>
+          </div>
+
+          <div class="rules-grid">
+            <div>Keep memes school appropriate.</div>
+            <div>Do not post private information.</div>
+            <div>Do not post anything mean about a classmate or teacher.</div>
+            <div>Use your own image or a safe web image link.</div>
+            <div>The board resets every 24 hours.</div>
+            <div>No account is needed to post.</div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <template id="memeCardTemplate">
+      <article class="meme-card">
+        <div class="meme-media"></div>
+        <div class="meme-body">
+          <div class="meme-meta"></div>
+          <h3></h3>
+          <p></p>
+          <div class="meme-actions">
+            <button class="vote-button" type="button">Vote</button>
+            <span class="vote-count">0 votes</span>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
