@@ -38,6 +38,8 @@ The app is built with plain HTML, CSS, and JavaScript, so it works in Chrome wit
 
 If the school blocks GitHub Pages, the project will need to be hosted somewhere the school allows.
 
+This repo includes a GitHub Pages workflow in `.github/workflows/pages.yml`.
+
 ## Files
 
 - `index.html` - page layout and tabs
