@@ -1,0 +1,10 @@
+{
+  "name": "Meme of the Day",
+  "short_name": "Memes",
+  "description": "A no-login classroom meme board that resets every 24 hours.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#070707",
+  "theme_color": "#e50914",
+  "icons": []
+}

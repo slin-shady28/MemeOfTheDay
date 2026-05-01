@@ -46,6 +46,11 @@ const saveMemes = (memes) => {
 let cycleStart = getCycleStart()
 let memes = loadMemes()
 
+const createId = () => {
+  if (window.crypto?.randomUUID) return window.crypto.randomUUID()
+  return `meme-${Date.now()}-${Math.random().toString(16).slice(2)}`
+}
+
 const resetBoard = () => {
   memes = []
   cycleStart = Date.now()
@@ -174,7 +179,7 @@ form.addEventListener("submit", async (event) => {
   const image = file ? await readFileAsDataUrl(file) : imageUrl
 
   memes.push({
-    id: crypto.randomUUID(),
+    id: createId(),
     author,
     title,
     text,

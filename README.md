@@ -26,11 +26,24 @@ Then open:
 http://127.0.0.1:5180/
 ```
 
+## Chromebook Use
+
+For a school Chromebook, use the published website link after GitHub Pages is turned on:
+
+```text
+https://slin-shady28.github.io/MemeOfTheDay/
+```
+
+The app is built with plain HTML, CSS, and JavaScript, so it works in Chrome without installing anything.
+
+If the school blocks GitHub Pages, the project will need to be hosted somewhere the school allows.
+
 ## Files
 
 - `index.html` - page layout and tabs
 - `styles.css` - black/red design and responsive layout
 - `app.js` - posting, voting, search, filtering, timer, and reset logic
+- `manifest.json` - browser app metadata for Chrome
 
 ## Important Note
 
