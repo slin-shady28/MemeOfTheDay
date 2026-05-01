@@ -70,7 +70,7 @@
           <div class="section-header">
             <p class="eyebrow">Post tab</p>
             <h2>Add photo or text</h2>
-            <p>Use an image file, paste an image link from the web, or write a text-only meme.</p>
+            <p>Search the web for an image, paste the image link, or write a text-only meme.</p>
           </div>
 
           <form id="memeForm" class="form-grid">
@@ -89,14 +89,26 @@
               <textarea id="textInput" maxlength="220" placeholder="Type the meme text or a caption"></textarea>
             </label>
 
+            <div class="web-search-box wide">
+              <div>
+                <span class="mini-label">Browse the web</span>
+                <h3>Find an image online</h3>
+                <p>Search, open an image, copy its image address, then paste it below.</p>
+              </div>
+              <div class="web-search-row">
+                <input id="webSearchInput" type="search" placeholder="Search for a meme image..." />
+                <button class="primary-action" type="button" id="webSearchButton">Search Web Images</button>
+              </div>
+            </div>
+
             <label>
-              Upload photo
-              <input id="fileInput" type="file" accept="image/*" />
+              Paste image URL
+              <input id="urlInput" type="url" placeholder="https://..." />
             </label>
 
             <label>
-              Or paste image URL
-              <input id="urlInput" type="url" placeholder="https://..." />
+              Backup: upload photo
+              <input id="fileInput" type="file" accept="image/*" />
             </label>
 
             <div class="form-actions wide">

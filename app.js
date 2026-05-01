@@ -7,6 +7,8 @@ const pages = document.querySelectorAll(".page")
 const jumpButtons = document.querySelectorAll("[data-jump]")
 const form = document.querySelector("#memeForm")
 const clearFormButton = document.querySelector("#clearForm")
+const webSearchButton = document.querySelector("#webSearchButton")
+const webSearchInput = document.querySelector("#webSearchInput")
 const resetButton = document.querySelector("#resetNow")
 const searchInput = document.querySelector("#searchInput")
 const typeFilter = document.querySelector("#typeFilter")
@@ -195,6 +197,11 @@ form.addEventListener("submit", async (event) => {
 })
 
 clearFormButton.addEventListener("click", () => form.reset())
+webSearchButton.addEventListener("click", () => {
+  const query = webSearchInput.value.trim() || document.querySelector("#titleInput").value.trim() || "funny school meme"
+  const searchUrl = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(query)}`
+  window.open(searchUrl, "_blank", "noopener,noreferrer")
+})
 resetButton.addEventListener("click", resetBoard)
 searchInput.addEventListener("input", render)
 typeFilter.addEventListener("change", render)

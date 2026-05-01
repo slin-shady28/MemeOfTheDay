@@ -5,7 +5,7 @@ A simple classroom website for posting a daily meme without login or signup.
 ## What It Does
 
 - Lets classmates and teachers post a meme for the day
-- Supports photo uploads, image links, and text-only memes
+- Supports web image search links, photo uploads, image links, and text-only memes
 - Uses a black and red design
 - Includes tabs for Home, Post, Memes, Timer, and Rules
 - Lets users search and filter the meme board
