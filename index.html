@@ -23,7 +23,10 @@
           <button class="tab is-active" data-tab="home">Home</button>
           <button class="tab" data-tab="submit">Post</button>
           <button class="tab" data-tab="gallery">Memes</button>
+          <button class="tab" data-tab="leaderboard">Leaderboard</button>
           <button class="tab" data-tab="timer">Timer</button>
+          <button class="tab" data-tab="help">How To Use</button>
+          <button class="tab" data-tab="safety">Safety</button>
           <button class="tab" data-tab="rules">Rules</button>
         </nav>
       </header>
@@ -148,6 +151,71 @@
               the board starts over.
             </p>
             <button class="primary-action" data-jump="submit">Post Before Reset</button>
+          </div>
+        </section>
+
+        <section id="leaderboard" class="page">
+          <div class="section-header">
+            <p class="eyebrow">Leaderboard tab</p>
+            <h2>Top memes today</h2>
+            <p>The highest voted memes show here first. The list resets with the daily board.</p>
+          </div>
+
+          <div id="leaderboardList" class="leaderboard-list"></div>
+          <div id="leaderboardEmpty" class="empty-state">No votes yet. Vote on a meme to start the leaderboard.</div>
+        </section>
+
+        <section id="help" class="page">
+          <div class="section-header">
+            <p class="eyebrow">Chromebook help</p>
+            <h2>How to post from school</h2>
+            <p>These steps work in Chrome on a school Chromebook without installing anything.</p>
+          </div>
+
+          <div class="key-grid">
+            <div>
+              <span>1</span>
+              <h3>Open Post</h3>
+              <p>Go to the Post tab and add your display name plus a meme pic name.</p>
+            </div>
+            <div>
+              <span>2</span>
+              <h3>Browse web images</h3>
+              <p>Search for a school-safe image, open it, and copy the image address.</p>
+            </div>
+            <div>
+              <span>3</span>
+              <h3>Paste the link</h3>
+              <p>Put the image address in Paste image URL, or make a text-only meme.</p>
+            </div>
+            <div>
+              <span>4</span>
+              <h3>Post and vote</h3>
+              <p>Post it, then check the Memes and Leaderboard tabs.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="safety" class="page">
+          <div class="section-header">
+            <p class="eyebrow">Safety tab</p>
+            <h2>Before you post</h2>
+            <p>Keep it funny, safe, and okay for school.</p>
+          </div>
+
+          <div class="safety-layout">
+            <div class="safety-card">
+              <h3>Good to post</h3>
+              <p>School-safe jokes, clean reaction pictures, class-friendly text memes, and images your teacher would be okay seeing.</p>
+            </div>
+            <div class="safety-card warning">
+              <h3>Do not post</h3>
+              <p>Private info, mean posts, unsafe links, bad language, or anything about a classmate that could embarrass them.</p>
+            </div>
+            <div class="safety-card">
+              <h3>Best rule</h3>
+              <p>If you would not show it to your teacher, do not post it here.</p>
+            </div>
           </div>
         </section>
 

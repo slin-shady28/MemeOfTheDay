@@ -8,6 +8,7 @@ A simple classroom website for posting a daily meme without login or signup.
 - Supports web image search links, photo uploads, image links, and text-only memes
 - Uses a black and red design
 - Includes tabs for Home, Post, Memes, Timer, and Rules
+- Includes extra tabs for Leaderboard, How To Use, and Safety
 - Lets users search and filter the meme board
 - Includes voting on memes
 - Resets the board after 24 hours

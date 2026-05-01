@@ -143,6 +143,9 @@ h1 {
 .form-grid,
 .toolbar,
 .rules-grid,
+.key-grid,
+.safety-card,
+.leaderboard-row,
 .stat-card,
 .empty-state {
   border: 1px solid var(--line);
@@ -487,7 +490,8 @@ select:focus {
   padding: 18px;
 }
 
-.rules-grid div {
+.rules-grid div,
+.key-grid div {
   min-height: 120px;
   border: 1px solid var(--line);
   border-radius: 18px;
@@ -496,6 +500,90 @@ select:focus {
   font-size: 1.05rem;
   font-weight: 900;
   line-height: 1.35;
+}
+
+.key-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  border-radius: 24px;
+  padding: 18px;
+}
+
+.key-grid span {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  background: var(--red);
+  color: white;
+  font-weight: 1000;
+}
+
+.key-grid h3,
+.safety-card h3,
+.leaderboard-details h3 {
+  margin-bottom: 8px;
+}
+
+.key-grid p,
+.safety-card p,
+.leaderboard-details p {
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.safety-layout {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.safety-card {
+  min-height: 220px;
+  border-radius: 24px;
+  padding: 22px;
+}
+
+.safety-card.warning {
+  border-color: rgba(229, 9, 20, 0.48);
+  background: linear-gradient(135deg, rgba(229, 9, 20, 0.22), rgba(18, 18, 18, 0.9));
+}
+
+.leaderboard-list {
+  display: grid;
+  gap: 12px;
+}
+
+.leaderboard-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  border-radius: 20px;
+  padding: 16px;
+}
+
+.leaderboard-rank {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border-radius: 16px;
+  background: var(--red);
+  font-weight: 1000;
+}
+
+.leaderboard-votes {
+  border-radius: 999px;
+  background: #25080b;
+  color: #ff9ba0;
+  padding: 10px 14px;
+  font-weight: 1000;
+  white-space: nowrap;
 }
 
 .empty-state {
@@ -513,6 +601,9 @@ select:focus {
   .web-search-row,
   .meme-grid,
   .rules-grid,
+  .key-grid,
+  .safety-layout,
+  .leaderboard-row,
   .stat-grid {
     grid-template-columns: 1fr;
   }

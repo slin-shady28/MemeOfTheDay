@@ -20,6 +20,8 @@ const photoCount = document.querySelector("#photoCount")
 const timeLeftSmall = document.querySelector("#timeLeftSmall")
 const timeLeftBig = document.querySelector("#timeLeftBig")
 const spotlight = document.querySelector("#spotlight")
+const leaderboardList = document.querySelector("#leaderboardList")
+const leaderboardEmpty = document.querySelector("#leaderboardEmpty")
 
 const getCycleStart = () => {
   const saved = Number(localStorage.getItem(cycleKey))
@@ -152,6 +154,43 @@ const renderSpotlight = () => {
   spotlight.replaceChildren(renderMemeCard(top))
 }
 
+const renderLeaderboard = () => {
+  const ranked = [...memes]
+    .filter((meme) => meme.votes > 0)
+    .sort((a, b) => b.votes - a.votes || b.createdAt - a.createdAt)
+    .slice(0, 10)
+
+  leaderboardList.replaceChildren(
+    ...ranked.map((meme, index) => {
+      const row = document.createElement("article")
+      row.className = "leaderboard-row"
+
+      const rank = document.createElement("div")
+      rank.className = "leaderboard-rank"
+      rank.textContent = `#${index + 1}`
+
+      const details = document.createElement("div")
+      details.className = "leaderboard-details"
+
+      const title = document.createElement("h3")
+      title.textContent = meme.title
+
+      const meta = document.createElement("p")
+      meta.textContent = `${meme.author || "Anonymous"} - ${meme.image ? "Photo meme" : "Text meme"}`
+
+      const votes = document.createElement("div")
+      votes.className = "leaderboard-votes"
+      votes.textContent = `${meme.votes} ${meme.votes === 1 ? "vote" : "votes"}`
+
+      details.append(title, meta)
+      row.append(rank, details, votes)
+      return row
+    })
+  )
+
+  leaderboardEmpty.classList.toggle("is-visible", ranked.length === 0)
+}
+
 const render = () => {
   checkReset()
   const filtered = getFilteredMemes()
@@ -161,6 +200,7 @@ const render = () => {
   memeCount.textContent = String(memes.length)
   photoCount.textContent = String(memes.filter((meme) => meme.image).length)
   renderSpotlight()
+  renderLeaderboard()
 }
 
 form.addEventListener("submit", async (event) => {
